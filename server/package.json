@@ -12,7 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
     "eslint": "^9.14.0",
+    "express": "^4.21.1",
+    "morgan": "^1.10.0",
     "nodemon": "^3.1.7",
     "server": "file:"
   }
