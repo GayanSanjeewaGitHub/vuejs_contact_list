@@ -4,13 +4,15 @@
     "@vue/cli-plugin-babel/preset"
   ],
   "plugins": [
-    "@vue/babel-plugin-jsx", // Updated to use Vue's JSX plugin
-    "@babel/plugin-transform-runtime" // Use the fully qualified plugin name
+    "@vue/babel-plugin-jsx", 
+    "@babel/plugin-transform-runtime"
   ],
   "env": {
     "test": {
       "presets": ["@babel/preset-env"],
-      "plugins": ["@babel/plugin-proposal-object-rest-spread"]
+      "plugins": [
+        "@babel/plugin-proposal-object-rest-spread"
+      ]
     }
   }
 }

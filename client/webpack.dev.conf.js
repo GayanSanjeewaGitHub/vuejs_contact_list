@@ -2,11 +2,9 @@ const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader'); 
 
 module.exports = {
-  // Entry point of your app
   mode: 'development', 
-  entry: './src/main.js',
+  entry: './src/main.js', 
 
-  // Output configuration
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -14,7 +12,7 @@ module.exports = {
 
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue.esm.js',  
+      vue$: 'vue/dist/vue.esm-bundler.js',  // Updated alias for Vue 3
       '@': path.resolve(__dirname, 'src')
     },
     extensions: ['.js', '.vue', '.json'], 
@@ -24,7 +22,7 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'  
+        loader: 'vue-loader', 
       },
       {
         test: /\.js$/,
@@ -39,13 +37,13 @@ module.exports = {
   },
 
   plugins: [
-    new VueLoaderPlugin(),   
+    new VueLoaderPlugin(), 
   ],
 
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),  
+      directory: path.join(__dirname, 'dist'),
     },
-    port: 8080,   
+    port: 8080,  
   },
 };
