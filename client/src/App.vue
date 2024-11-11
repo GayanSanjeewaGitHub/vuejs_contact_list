@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/book.png" style="width: 100px; height: 100px;">
+
     <router-view/>
   </div>
 </template>
@@ -17,7 +18,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #529be4;
+  margin-top: 80px;
 }
 </style>
