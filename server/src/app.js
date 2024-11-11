@@ -1,20 +1,18 @@
-import express from 'express'
-import bodyParser  from 'body-parser'
-import cors from 'cors'
-import morgan from 'morgan'
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import sequelize from './config/database.js';
+import contactRoutes from './routes/contactRoutes.js';
 
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+app.use('/api', contactRoutes);
 
-const app =  express()
-app.use(morgan('combine'))
-app.use(bodyParser.json())
-app.use(cors())
+const PORT = process.env.PORT || 3000;
 
-
-app.post('/register' , (req , res) =>{
-    res.send({
-        message: `registered   ${req.body.email}`
-    })
-
-})
-
-app.listen(process.env.PORT || 8081)
+sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+});

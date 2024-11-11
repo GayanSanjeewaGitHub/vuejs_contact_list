@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import ContactListView from '../views/ContactListView.vue';  // Use relative path
+import AddContactView from '../views/AddContactView.vue';  // Use relative path
+
 
 Vue.use(Router)
 
@@ -8,8 +10,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'ContactListView',
+      component: ContactListView
+    },
+    {
+      path: '/add',
+      name: 'AddContactView',
+      component: AddContactView
     }
   ]
 })
